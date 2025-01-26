@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenChillyShop.Web", "GreenChillyShop.Web\GreenChillyShop.Web.csproj", "{25E347DC-8E3A-4040-8873-4B1D4BBFFC30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenChillyShop.Models", "GreenChillyShop.Models\GreenChillyShop.Models.csproj", "{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{25E347DC-8E3A-4040-8873-4B1D4BBFFC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25E347DC-8E3A-4040-8873-4B1D4BBFFC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25E347DC-8E3A-4040-8873-4B1D4BBFFC30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
