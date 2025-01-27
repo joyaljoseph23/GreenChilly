@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenChillyShop.Web", "GreenChillyShop.Web\GreenChillyShop.Web.csproj", "{25E347DC-8E3A-4040-8873-4B1D4BBFFC30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreenChillyShop.Web", "GreenChillyShop.Web\GreenChillyShop.Web.csproj", "{25E347DC-8E3A-4040-8873-4B1D4BBFFC30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenChillyShop.Models", "GreenChillyShop.Models\GreenChillyShop.Models.csproj", "{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreenChillyShop.Models", "GreenChillyShop.Models\GreenChillyShop.Models.csproj", "{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenChillyShop.DataAccess", "GreenChillyShop.DataAccess\GreenChillyShop.DataAccess.csproj", "{BE286955-B809-4428-85BA-0EE9F2F3EF9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCD14DC8-468B-4A05-A301-F12C8BDBA34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE286955-B809-4428-85BA-0EE9F2F3EF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE286955-B809-4428-85BA-0EE9F2F3EF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE286955-B809-4428-85BA-0EE9F2F3EF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE286955-B809-4428-85BA-0EE9F2F3EF9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
