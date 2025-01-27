@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GreenChillyShop.Models
 {
-    //Testing for branch
+    
     public class Transaction
     {
         public int Id { get; set; }  // Unique transaction ID
