@@ -11,6 +11,7 @@ namespace GreenChillyShop.DataAccess
 {
     public class ApplicationDbContext:DbContext
     {
+        //Applicationd db
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options):base(options)
         {
             
