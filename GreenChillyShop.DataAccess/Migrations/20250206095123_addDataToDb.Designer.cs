@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GreenChillyShop.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250202205959_addProductsToDb")]
-    partial class addProductsToDb
+    [Migration("20250206095123_addDataToDb")]
+    partial class addDataToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,53 @@ namespace GreenChillyShop.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("GreenChillyShop.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Vegetables Section ",
+                            Name = "Vegetables"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Fruits Section",
+                            Name = "Fruits"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Sweets Section",
+                            Name = "Sweets"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Chocolate Section",
+                            Name = "Chocolates"
+                        });
+                });
+
             modelBuilder.Entity("GreenChillyShop.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -32,11 +79,14 @@ namespace GreenChillyShop.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Category")
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -52,14 +102,17 @@ namespace GreenChillyShop.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Products");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Category = "Vegetables",
+                            CategoryId = 2,
                             Description = "This sections contains vegetables",
+                            ImageUrl = "",
                             Name = "Carrot",
                             Price = 2m,
                             StockQuantity = 50
@@ -67,8 +120,9 @@ namespace GreenChillyShop.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            Category = "Fruits",
+                            CategoryId = 2,
                             Description = "This sections contains Fruits",
+                            ImageUrl = "",
                             Name = "Banana",
                             Price = 50m,
                             StockQuantity = 150
@@ -76,12 +130,24 @@ namespace GreenChillyShop.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            Category = "Sweets",
+                            CategoryId = 3,
                             Description = "This sections contains sweets",
+                            ImageUrl = "",
                             Name = "Sona papdi",
                             Price = 112m,
                             StockQuantity = 50
                         });
+                });
+
+            modelBuilder.Entity("GreenChillyShop.Models.Product", b =>
+                {
+                    b.HasOne("GreenChillyShop.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

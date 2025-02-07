@@ -20,3 +20,35 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*custom css*/
+tr:hover {
+    background-color: #D6EEEE;
+}
+.navbar{
+    background:#131313;
+    height:80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:sticky;
+    z-index:999;
+    top:0;
+}
+.navbar-container{
+    display:flex;
+    justify-content:space-between;
+    }
+.navbar-brand{
+    background-color:#ff8177;
+    background-image:linear-gradient(to top,#ff0844 0%,#ffb199 100%);
+    background-size:100%;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    cursor:pointer;
+    font-size:2rem;
+}
+#btn-search:hover {
+    background-image: linear-gradient(to top,#ff0844 0%,#ffb199 100%);
+}
