@@ -4,23 +4,24 @@
         <h3 class="text-center">Create Category</h3>
     </div>
     <div class="card-body">
-        <form action="post" class="row">
+       
+        <form method="post" class="row">
             <div class="form-floating py-2 col-12">
 
-                <input type="" asp-for="Name" class="form-control" />
+                <input asp-for="Name" class="form-control" />
                 <label asp-for="Name" class="ms-2"></label>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-floating py-2 col-12">
 
-                <input type="" asp-for="Description" class="form-control" />
+                <input asp-for="Description" class="form-control" />
                 <label asp-for="Description" class="ms-2"></label>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="row">
 
                <div class="col-6">
-                    <button class="btn btn-secondary form-control">
+                    <button type="submit" class="btn btn-secondary form-control">
                        Create
                    </button>
 
@@ -39,3 +40,10 @@
     </div>
    
 </div>
+
+
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}

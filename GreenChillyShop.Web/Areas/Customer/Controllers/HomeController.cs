@@ -2,8 +2,9 @@ using GreenChillyShop.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace GreenChillyShop.Web.Controllers
+namespace GreenChillyShop.Web.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

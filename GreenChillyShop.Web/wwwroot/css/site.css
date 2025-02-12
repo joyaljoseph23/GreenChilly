@@ -22,9 +22,7 @@ body {
 }
 
 /*custom css*/
-tr:hover {
-    background-color: #D6EEEE;
-}
+
 .navbar{
     background:#131313;
     height:80px;
@@ -51,4 +49,11 @@ tr:hover {
 }
 #btn-search:hover {
     background-image: linear-gradient(to top,#ff0844 0%,#ffb199 100%);
+}
+li a.active {
+    background-color: #04AA6D;
+    color: #ff8177;
+}
+#greenchilli-ftr{
+    text-align:center;
 }
