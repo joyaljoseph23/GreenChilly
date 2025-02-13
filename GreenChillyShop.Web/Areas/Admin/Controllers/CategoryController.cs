@@ -13,6 +13,12 @@ namespace GreenChillyShop.Web.Areas.Admin.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            List<Category> objProductList = _unitOfWork.Category.GetAll().ToList();
+            return Json(new { data = objProductList });
+        }
         public IActionResult Index()
         {
             List<Category> categories = _unitOfWork.Category.GetAll().ToList();
@@ -90,6 +96,7 @@ namespace GreenChillyShop.Web.Areas.Admin.Controllers
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
         }
+       
 
     }
 }

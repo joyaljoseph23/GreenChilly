@@ -29,9 +29,8 @@ namespace GreenChillyShop.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -45,25 +44,25 @@ namespace GreenChillyShop.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Vegetables Section ",
+                            DisplayOrder = 1,
                             Name = "Vegetables"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Fruits Section",
+                            DisplayOrder = 2,
                             Name = "Fruits"
                         },
                         new
                         {
                             Id = 3,
-                            Description = "Sweets Section",
+                            DisplayOrder = 3,
                             Name = "Sweets"
                         },
                         new
                         {
                             Id = 4,
-                            Description = "Chocolate Section",
+                            DisplayOrder = 4,
                             Name = "Chocolates"
                         });
                 });

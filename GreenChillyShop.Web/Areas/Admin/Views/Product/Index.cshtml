@@ -1,31 +1,87 @@
-﻿@using GreenChillyShop.Models
-@model List<Product>
-
-
-
-<div class="container">
-    <div>
-        <h4 class="mt-2">Products</h4>
-    </div>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-4 mb-3">
-                <div class="card text-center">
-                    <h4 class="card-title">
-                        @item.Name
-                    </h4>
-
-                    <div class="card-body">
-                        @item.Description
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-warning">Add To Cart</button>
-                    </div>
-                 </div>
-            
+﻿@model List<Product>
+@if (TempData["success"] != null)
+{
+    <h2>@TempData["success"]</h2>
+}
+<div class="card">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Product List</h2>
+            </div>
         </div>
-        }
     </div>
-   
+    <div class="card-body p-4">
+        <div class="row pb-3">
+            <div class="col-6">
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Product" asp-action="Create" class="btn btn-secondary">
+                    <i class="bi bi-plus-circle"></i>  Create New Product
+                </a>
+            </div>
+        </div>
+
+        <table class="table table-bordered striped">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Stock
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+            <tbody>
+                  @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                        @item.Name
+                        </td>
+                        <td>
+                        @item.Description
+                        </td>
+                        <td>
+                            @item.StockQuantity
+                        </td>
+                        <td>
+                            @item.Price
+                        </td>
+                        <td>
+                    <div class="w-75 btn-group">
+                    <a asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary mx-2">
+                    <i class="bi bi-pencil-square"></i> Edit
+                    </a>
+                    <a asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mx-2">
+                    <i class="bi bi-trash-fill"></i> Delete
+                    </a>
+                    </div>
+                    </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
 </div>
+
+@section Scripts {
+   
+
+}
+
+
+
+
+
+

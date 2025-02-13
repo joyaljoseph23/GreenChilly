@@ -25,27 +25,28 @@ namespace GreenChillyShop.Web.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            /* ProductVM productVM = new()
-             {
-                 CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
-                 {
-                     Text = u.Name,
-                     Value = u.Id.ToString()
-                 }),
-                 Product = new Product()
-             };
-             if (id == null || id == 0)
-             {
-                 //create
-                 return View(productVM);
-             }
-             else
-             {
-                 //update
-                 productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
-                 return View(productVM);
-             }*/
-            return View();
+            ProductVM productVM = new()
+            {
+                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                }),
+                Product = new Product()
+            };
+          /*  if (id == null || id == 0)
+            {
+                //create
+                return View(productVM);
+            }
+            else
+            {
+                //update
+                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
+                return View(productVM);
+            }*/
+
+            return View(productVM);
         }
         [HttpPost]
         public IActionResult Create(Product obj)

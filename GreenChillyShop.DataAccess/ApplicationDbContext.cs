@@ -21,10 +21,10 @@ namespace GreenChillyShop.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
-                new Category { Id=1,Description="Vegetables Section ",Name="Vegetables"},
-                new Category { Id=2,Description="Fruits Section",Name="Fruits"},
-                new Category { Id=3,Description="Sweets Section",Name="Sweets"},
-                new Category { Id=4,Description="Chocolate Section",Name="Chocolates"}
+                new Category { Id=1,Name="Vegetables",DisplayOrder=1},
+                new Category { Id=2,Name="Fruits", DisplayOrder =2},
+                new Category { Id=3,Name="Sweets", DisplayOrder =3},
+                new Category { Id=4,Name="Chocolates", DisplayOrder =4}
                 );
             
             modelBuilder.Entity<Product>().HasData(

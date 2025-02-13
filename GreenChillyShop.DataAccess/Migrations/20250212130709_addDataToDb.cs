@@ -19,7 +19,7 @@ namespace GreenChillyShop.DataAccess.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    DisplayOrder = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -52,13 +52,13 @@ namespace GreenChillyShop.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "Id", "Description", "Name" },
+                columns: new[] { "Id", "DisplayOrder", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Vegetables Section ", "Vegetables" },
-                    { 2, "Fruits Section", "Fruits" },
-                    { 3, "Sweets Section", "Sweets" },
-                    { 4, "Chocolate Section", "Chocolates" }
+                    { 1, 1, "Vegetables" },
+                    { 2, 2, "Fruits" },
+                    { 3, 3, "Sweets" },
+                    { 4, 4, "Chocolates" }
                 });
 
             migrationBuilder.InsertData(
@@ -66,9 +66,10 @@ namespace GreenChillyShop.DataAccess.Migrations
                 columns: new[] { "Id", "CategoryId", "Description", "ImageUrl", "Name", "Price", "StockQuantity" },
                 values: new object[,]
                 {
-                    { 1, 2, "This sections contains vegetables", "", "Carrot", 2m, 50 },
+                    { 1, 1, "This sections contains vegetables", "", "Carrot", 2m, 50 },
                     { 2, 2, "This sections contains Fruits", "", "Banana", 50m, 150 },
-                    { 3, 3, "This sections contains sweets", "", "Sona papdi", 112m, 50 }
+                    { 3, 3, "This sections contains sweets", "", "Sona papdi", 112m, 50 },
+                    { 4, 4, "This sections contains Chocolates", "", "KitKat", 40m, 50 }
                 });
 
             migrationBuilder.CreateIndex(
